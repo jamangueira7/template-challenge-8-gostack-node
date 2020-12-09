@@ -6,7 +6,7 @@ export default class AddProductsIdToOrdersProducts1607471600956 implements Migra
       await queryRunner.addColumn(
         'orders_products',
         new TableColumn({
-          name: 'products_id',
+          name: 'product_id',
           type: 'uuid',
           isNullable: true,
         }),
@@ -16,7 +16,7 @@ export default class AddProductsIdToOrdersProducts1607471600956 implements Migra
         'orders_products',
         new TableForeignKey({
           name: 'OrdersProductsProduct',
-          columnNames: ['products_id'],
+          columnNames: ['product_id'],
           referencedColumnNames : ['id'],
           referencedTableName: 'products',
           onDelete: 'SET NULL',
@@ -27,7 +27,7 @@ export default class AddProductsIdToOrdersProducts1607471600956 implements Migra
     public async down(queryRunner: QueryRunner): Promise<void> {
       await queryRunner.dropForeignKey('orders_products', 'OrdersProductsProduct');
 
-      await queryRunner.dropColumn('orders_products', 'products_id');
+      await queryRunner.dropColumn('orders_products', 'product_id');
     }
 
 }
