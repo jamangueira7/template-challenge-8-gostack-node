@@ -34,6 +34,17 @@ Resolulção do teste.
   <img alt="resolucao" src=".github/teste.PNG" width="100%">
 </p>
 
+
+## 🚀 Como Rodar
+
+- Clone o projeto.
+- Entre na pasta do projeto e rode yarn install (pode usar npm install de acordo com a sua configuração).
+- Rode o comando docker run --name gostack_postgres -e POSTGRES_PASSWORD=docker -p 5432:5432 -d postgres
+- Crei os bancos gostack_desafio09 e gostack_desafio09_tests.
+- λ yarn typeorm migration:run
+- yarn test para rodar os testes.
+- yarn yarn dev:server para rodar o projeto (localhost:3333).
+
 ## 👩🏿‍💻 Rotas
 
 - **`POST /orders`**: Nessa rota você deve receber no corpo da requisição o customer_id e um array de products, contendo o id e a quantity que você deseja adicionar a um novo pedido. Aqui você deve cadastrar na tabela orders um novo pedido, que estará relacionado ao customer_id informado, created_at e updated_at . Já na tabela orders_products, você deve armazenar o product_id, order_id, price e quantity, created_at e updated_at.
@@ -157,16 +168,6 @@ Retorna:
     }
 }
 ```
-
-## 🚀 Como Rodar
-
-- Clone o projeto.
-- Entre na pasta do projeto e rode yarn install (pode usar npm install de acordo com a sua configuração).
-- Rode o comando docker run --name gostack_postgres -e POSTGRES_PASSWORD=docker -p 5432:5432 -d postgres
-- Crei os bancos gostack_desafio09 e gostack_desafio09_tests.
-- λ yarn typeorm migration:run
-- yarn test para rodar os testes.
-- yarn yarn dev:server para rodar o projeto (localhost:3333).
 
 ## 🤔 Como contribuir
 
